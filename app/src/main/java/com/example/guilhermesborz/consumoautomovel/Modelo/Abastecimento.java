@@ -14,8 +14,11 @@ public class Abastecimento implements Parcelable {
     private String dataAbastecimento;
     private String postoEscolhido;
 
+    public Abastecimento() {
 
-    protected Abastecimento(Parcel in) {
+    }
+
+    public Abastecimento(Parcel in) {
         quilometragemAtual = in.readFloat();
         litrosAbastecidos = in.readFloat();
         dataAbastecimento = in.readString();
@@ -34,21 +37,12 @@ public class Abastecimento implements Parcelable {
         }
     };
 
+
     @Override
     public int describeContents() {
         return 0;
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeFloat(quilometragemAtual);
-        dest.writeFloat(litrosAbastecidos);
-        dest.writeString(dataAbastecimento);
-        dest.writeString(postoEscolhido);
-    }
-    /*public String toString(){
-        return "Eu sou o "+this.getNome();
-    }*/
 
     public Float getQuilometragemAtual() {
         return quilometragemAtual;
@@ -80,5 +74,13 @@ public class Abastecimento implements Parcelable {
 
     public void setPostoEscolhido(String postoEscolhido) {
         this.postoEscolhido = postoEscolhido;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeFloat(quilometragemAtual);
+        dest.writeFloat(litrosAbastecidos);
+        dest.writeString(dataAbastecimento);
+        dest.writeString(postoEscolhido);
     }
 }

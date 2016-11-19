@@ -5,36 +5,38 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin">
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/rouded"
+    android:layout_gravity="center">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvDataLista"
-        android:text="AQUI VAI A DATA"/>
+        style="@style/FonteLista"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvQuilometragemLista"
-        android:text="KM: 1000"
         android:layout_below="@id/tvDataLista"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        style="@style/FonteLista"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvLitrosLista"
-        android:text="Litros: 80"
         android:layout_alignBaseline="@+id/tvQuilometragemLista"
         android:layout_alignBottom="@+id/tvQuilometragemLista"
         android:layout_toEndOf="@+id/tvQuilometragemLista"
-        android:layout_marginStart="36dp" />
+        android:layout_marginStart="36dp"
+        style="@style/FonteLista"/>
     <ImageView
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:id="@+id/ivIconePosto"
-        android:src="@drawable/asus_zenfone"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true"
+        style="@style/FonteLista"/>
 
 
 

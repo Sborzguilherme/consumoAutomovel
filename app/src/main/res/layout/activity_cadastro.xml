@@ -8,39 +8,44 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.guilhermesborz.consumoautomovel.Modelo.CadastroActivity">
+    tools:context="com.example.guilhermesborz.consumoautomovel.CadastroActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Quilometragem Atual"
-        android:id="@+id/tvQuilometragem"/>
+        android:id="@+id/tvQuilometragem"
+        style="@style/FonteCadastro"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edQuilometragem"
         android:layout_below="@id/tvQuilometragem"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:inputType="number"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Litros Abastecidos"
         android:id="@+id/tvAbastecidos"
         android:layout_below="@id/edQuilometragem"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        style="@style/FonteCadastro"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edAbastecidos"
         android:layout_below="@id/tvAbastecidos"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:inputType="number"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Data do Abastecimento"
         android:id="@+id/tvData"
         android:layout_below="@+id/edAbastecidos"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        style="@style/FonteCadastro"/>
     <EditText
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
@@ -53,20 +58,24 @@
         android:text="Posto"
         android:id="@+id/tvPosto"
         android:layout_below="@id/edRecebeData"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:inputType="date"
+        style="@style/FonteCadastro"/>
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvPosto"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        style="@style/FonteCadastro"/>
     
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Confirmar"
         android:onClick="clicaConfirmar"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        style="@style/FonteBotao"/>
 
 </RelativeLayout>

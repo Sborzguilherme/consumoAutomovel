@@ -8,38 +8,52 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.guilhermesborz.consumoautomovel.Modelo.MainActivity">
-
-   <Button
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text="Adicionar Abastecimento"
-       android:id="@+id/btAdicionar"
-       android:onClick="clicaAdicionarAbastecimento"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Visualizar Abastecimentos"
-        android:id="@+id/btVisualizar"
-        android:layout_below="@+id/btAdicionar"
-        android:layout_marginTop="10dp"
-        android:onClick="clicaVisualizarLista"/>
+    tools:context="com.example.guilhermesborz.consumoautomovel.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Autonomia Atual"
         android:id="@+id/tvAutonomia"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="120dp"
+        style="@style/FonteMostraAutonomia"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TESTE"
+        android:text=""
+        android:id="@+id/tvMostraResultadoConsumo"
         android:layout_below="@id/tvAutonomia"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
+        style="@style/FonteMostraAutonomia"
+        android:textSize="20dp"
         />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adicionar Abastecimento"
+        android:id="@+id/btAdicionar"
+        android:onClick="clicaAdicionarAbastecimento"
+        android:layout_above="@+id/btVisualizar"
+        android:layout_alignParentStart="true"
+        style="@style/FonteBotao"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Visualizar Abastecimentos"
+        android:id="@+id/btVisualizar"
+        android:onClick="clicaVisualizarLista"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        style="@style/FonteBotao"/>
+
+
+
 
 </RelativeLayout>

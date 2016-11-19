@@ -8,15 +8,20 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.guilhermesborz.consumoautomovel.Modelo.ListaActivity">
+    tools:context="com.example.guilhermesborz.consumoautomovel.ListaActivity">
 
     <android.support.v7.widget.RecyclerView
     android:id="@+id/rvListaAbastecimento"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent" >
 
-</android.support.v7.widget.RecyclerView>
+    </android.support.v7.widget.RecyclerView>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        android:layout_alignParentBottom="true"
+        android:onClick="clicaVoltar"/>
 
 
 </RelativeLayout>

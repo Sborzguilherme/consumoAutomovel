@@ -14,7 +14,6 @@ import com.example.guilhermesborz.consumoautomovel.R;
 import java.util.ArrayList;
 
 
-
 public class AbastecimentoAdapter extends RecyclerView.Adapter {
 
     private ArrayList<Abastecimento> listaAbastecimento;
@@ -27,7 +26,7 @@ public class AbastecimentoAdapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.id.itens_Lista,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.itens_lista,parent,false);
         AbastecimentoViewHolder retorno = new AbastecimentoViewHolder(view);
         return retorno;
 
@@ -64,8 +63,18 @@ public class AbastecimentoAdapter extends RecyclerView.Adapter {
 
         public void seAtualiza(Abastecimento elementoParaMostrar){
             tvDataLista.setText(elementoParaMostrar.getDataAbastecimento());
-            tvLitrosLista.setText(String.valueOf(elementoParaMostrar.getLitrosAbastecidos()));
-            tvQuilometragemLista.setText(String.valueOf(elementoParaMostrar.getQuilometragemAtual()));
+            tvLitrosLista.setText("Litros: "+String.valueOf(elementoParaMostrar.getLitrosAbastecidos()));
+            tvQuilometragemLista.setText("Km: "+String.valueOf(elementoParaMostrar.getQuilometragemAtual()));
+
+            if(elementoParaMostrar.getPostoEscolhido().equals("Texaco")){
+                ivIconePosto.setImageResource(R.drawable.posto1);
+            }else if(elementoParaMostrar.getPostoEscolhido().equals("Shell")){
+                ivIconePosto.setImageResource(R.drawable.posto2);
+            }else if(elementoParaMostrar.getPostoEscolhido().equals("Petrobras")){
+                ivIconePosto.setImageResource(R.drawable.posto3);
+            }else
+                ivIconePosto.setImageResource(R.drawable.posto4);
+
 
         }
     }
