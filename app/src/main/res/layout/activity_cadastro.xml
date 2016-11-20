@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quilometragem Atual"
+        android:text="@string/quilometragem_atual"
         android:id="@+id/tvQuilometragem"
         style="@style/FonteCadastro"/>
     <EditText
@@ -21,44 +21,46 @@
         android:layout_height="wrap_content"
         android:id="@+id/edQuilometragem"
         android:layout_below="@id/tvQuilometragem"
-        android:layout_marginTop="10dp"
-        android:inputType="number"/>
+        android:layout_marginTop="@dimen/margem_entre_elementos"
+        android:inputType="numberDecimal"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Litros Abastecidos"
+        android:text="@string/litros_abastecidos"
         android:id="@+id/tvAbastecidos"
         android:layout_below="@id/edQuilometragem"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/margem_entre_elementos"
         style="@style/FonteCadastro"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edAbastecidos"
         android:layout_below="@id/tvAbastecidos"
-        android:layout_marginTop="10dp"
-        android:inputType="number"/>
+        android:layout_marginTop="@dimen/margem_entre_elementos"
+        android:inputType="numberDecimal"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Data do Abastecimento"
+        android:text="@string/data_do_abastecimento"
         android:id="@+id/tvData"
         android:layout_below="@+id/edAbastecidos"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/margem_entre_elementos"
         style="@style/FonteCadastro"/>
-    <EditText
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:id="@+id/edRecebeData"
-        android:layout_below="@+id/tvData"
-        android:onClick="MostrarData"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Posto"
+        android:id="@+id/tvRecebeData"
+        android:layout_below="@+id/tvData"
+        android:layout_marginTop="@dimen/margem_entre_elementos"
+        android:onClick="MostrarData"
+        style="@style/FonteBotao"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/posto"
         android:id="@+id/tvPosto"
-        android:layout_below="@id/edRecebeData"
-        android:layout_marginTop="10dp"
+        android:layout_below="@id/tvRecebeData"
+        android:layout_marginTop="30dp"
         android:inputType="date"
         style="@style/FonteCadastro"/>
 
@@ -67,13 +69,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvPosto"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/margem_entre_elementos"
         style="@style/FonteCadastro"/>
     
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Confirmar"
+        android:text="@string/confirmar"
         android:onClick="clicaConfirmar"
         android:layout_alignParentBottom="true"
         style="@style/FonteBotao"/>

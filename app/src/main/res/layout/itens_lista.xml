@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/tvQuilometragemLista"
         android:layout_below="@id/tvDataLista"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/margem_entre_elementos"
         style="@style/FonteLista"/>
 
     <TextView

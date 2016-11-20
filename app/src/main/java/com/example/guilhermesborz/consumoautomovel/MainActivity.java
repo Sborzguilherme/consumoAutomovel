@@ -32,11 +32,14 @@ public class MainActivity extends Activity {
             tvMostraResultadoConsumo.setText("Cadastre mais um abastecimento");
         }else{
 
-            int i = AbastecimentoDAO.obterLista().size()-1;
+            int x = AbastecimentoDAO.obterLista().size()-1;
 
-            double quilometragem = AbastecimentoDAO.obterLista().get(i).getQuilometragemAtual() - AbastecimentoDAO.obterLista().get(i-1).getQuilometragemAtual();
-            double litros = AbastecimentoDAO.obterLista().get(i-1).getLitrosAbastecidos();
+            double quilometragem = AbastecimentoDAO.obterLista().get(x).getQuilometragemAtual() - AbastecimentoDAO.obterLista().get(0).getQuilometragemAtual();
+            double litros = 0.0; /*AbastecimentoDAO.obterLista().get(i-1).getLitrosAbastecidos();*/
 
+            for(int i=0;i<x;i++){
+                litros+=AbastecimentoDAO.obterLista().get(i).getLitrosAbastecidos();
+            }
 
             double resultado = (quilometragem/litros);
 

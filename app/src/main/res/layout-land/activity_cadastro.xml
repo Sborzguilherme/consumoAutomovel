@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quilometragem_atual"
+                android:id="@+id/tvQuilometragem"
+                style="@style/FonteCadastro"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edQuilometragem"
+                android:layout_below="@id/tvQuilometragem"
+                android:layout_marginTop="@dimen/margem_entre_elementos"
+                android:inputType="numberDecimal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/litros_abastecidos"
+                android:id="@+id/tvAbastecidos"
+                android:layout_below="@id/edQuilometragem"
+                android:layout_marginTop="@dimen/margem_entre_elementos"
+                style="@style/FonteCadastro"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edAbastecidos"
+                android:layout_below="@id/tvAbastecidos"
+                android:layout_marginTop="@dimen/margem_entre_elementos"
+                android:inputType="numberDecimal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/data_do_abastecimento"
+                android:id="@+id/tvData"
+                android:layout_below="@+id/edAbastecidos"
+                android:layout_marginTop="@dimen/margem_entre_elementos"
+                style="@style/FonteCadastro"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvRecebeData"
+                android:layout_below="@+id/tvData"
+                android:layout_marginTop="@dimen/margem_entre_elementos"
+                android:onClick="MostrarData"
+                style="@style/FonteBotao"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/posto"
+                android:id="@+id/tvPosto"
+                android:layout_below="@id/tvRecebeData"
+                android:layout_marginTop="30dp"
+                android:inputType="date"
+                style="@style/FonteCadastro"/>
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvPosto"
+                android:layout_marginTop="@dimen/margem_entre_elementos"
+                style="@style/FonteCadastro"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/confirmar"
+                android:onClick="clicaConfirmar"
+                android:layout_below="@id/spinner"
+                android:layout_marginTop="@dimen/margem_entre_elementos"
+                style="@style/FonteBotao"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>

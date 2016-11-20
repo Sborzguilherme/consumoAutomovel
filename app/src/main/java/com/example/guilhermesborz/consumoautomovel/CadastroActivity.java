@@ -17,7 +17,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import android.view.View;
 
@@ -30,7 +34,7 @@ public class CadastroActivity extends Activity {
     private int ano, mes, dia;
     private EditText edQuilometragem;
     private EditText edLitros;
-    private EditText edRecebeData;
+    //private TextView tvRecebeData;
     private Spinner spinner;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -39,10 +43,10 @@ public class CadastroActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
-        txtData = (TextView) findViewById(R.id.edRecebeData);
+        txtData = (TextView) findViewById(R.id.tvRecebeData);
         edQuilometragem = (EditText)findViewById(R.id.edQuilometragem);
         edLitros = (EditText) findViewById(R.id.edAbastecidos);
-        edRecebeData= (EditText)findViewById(R.id.edRecebeData);
+        //txtData = (TextView) findViewById(R.id.tvRecebeData);
         spinner = (Spinner) findViewById(R.id.spinner);
 
 
@@ -137,20 +141,44 @@ public class CadastroActivity extends Activity {
         }
       return true;
     }
+    public boolean validaDataRecebida() throws ParseException {
 
-    public void clicaConfirmar(View view){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        sdf.setLenient(false);
+        Date dataRecebida = sdf.parse(txtData.getText().toString());
+        Date dataAtual = new Date();
+
+        if(dataRecebida.after(dataAtual)){
+            return false;
+        }
+        if(AbastecimentoDAO.obterLista().size()>0){
+
+            int ultimoAbastecimento = AbastecimentoDAO.obterLista().size()-1;
+            String stringDataLista = AbastecimentoDAO.obterLista().get(ultimoAbastecimento).getDataAbastecimento();
+            Date dataUltimoAbastecimento = sdf.parse(stringDataLista);
+
+            if(dataRecebida.before(dataUltimoAbastecimento)){
+                return false;
+            }
+        }
+            return true;
+    }
+
+    public void clicaConfirmar(View view) throws ParseException {
 
         if(edQuilometragem.getText().toString().isEmpty()|| edLitros.getText().toString().isEmpty()){
             Toast.makeText(CadastroActivity.this.getApplicationContext(), "Insira Valor", Toast.LENGTH_SHORT).show();
 
         }else if(!validaQuilometragem(edQuilometragem)){
             Toast.makeText(CadastroActivity.this.getApplicationContext(), "Uma quilometragem maior ja foi digitada", Toast.LENGTH_SHORT).show();
+        }else if(!validaDataRecebida()){
+            Toast.makeText(CadastroActivity.this.getApplicationContext(), "Data Digitada é Inválida", Toast.LENGTH_SHORT).show();
         }
         else{
 
             String valorQuilometragem = edQuilometragem.getText().toString();
             String valorLitros = edLitros.getText().toString();
-            String valorData = edRecebeData.getText().toString();
+            String valorData = txtData.getText().toString();
             int seletorSpinner = spinner.getSelectedItemPosition();
 
             Float quilometragem = Float.parseFloat(valorQuilometragem);

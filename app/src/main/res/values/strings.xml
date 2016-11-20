@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">Consumo de Combustível</string>
+    <string name="autonomia_atual">Autonomia Atual</string>
+    <string name="adicionar_abastecimento">Adicionar Abastecimento</string>
+    <string name="visualizar_abastecimentos">Visualizar Abastecimentos</string>
+    <string name="quilometragem_atual">Quilometragem Atual</string>
+    <string name="litros_abastecidos">Litros Abastecidos</string>
+    <string name="data_do_abastecimento">Data do Abastecimento</string>
+    <string name="posto">Posto</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="voltar">Voltar</string>
 
     <string-array name="planets_array">
         <item>Texaco</item>

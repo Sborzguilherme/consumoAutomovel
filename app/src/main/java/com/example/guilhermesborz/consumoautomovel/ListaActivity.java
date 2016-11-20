@@ -56,13 +56,7 @@ public class ListaActivity extends Activity {
         return true;
     }
 
-    public void clicaVoltar(View view){
-        Intent abridor = new Intent(this.getApplicationContext(), MainActivity.class);
-        abridor.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(abridor);
-        finish();
 
-    }
 
 }
 
